@@ -8,9 +8,7 @@ import '../providers/movie.dart';
 class MovieItem extends StatelessWidget {
   late OverlayEntry entry;
 
-  MovieItem() {
-    WidgetsBinding.instance!.addPostFrameCallback((_) => showOverlay);
-  }
+  MovieItem() {}
 
   void showOverlay(BuildContext context, String description) {
     final overlay = Overlay.of(context);
@@ -30,6 +28,7 @@ class MovieItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final movie = Provider.of<Movie>(context, listen: false);
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(5),
       child: GridTile(
